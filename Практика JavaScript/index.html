@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1aWDAlOrw2TjonY0HQHahxWwg8Ea1Mfc&callback=initMap&libraries=&v=weekly" defer></script><!--API Google Maps-->
+</head>
+<body class="page">
+	
+	<!--РАБОТА С INPUT-->
+	<h1>Работа с input</h1>
+
+	<label><input type="checkbox" class="checkbox" onchange="funcCheckbox()">Пример checkbox</label>
+	<br><br>
+
+	<input type="radio" name="radio1" value="1"> 0
+	<input type="radio" name="radio1" value="2"> 1 
+	<input type="radio" name="radio1" value="3"> 2
+	<button onclick="funcRadio()">Какой элемент выбран?</button>
+	<hr>
+
+	<!--РАБОТА С СЕЛЕКТОРОМ И ПОЛЗУНКОМ-->
+	<h1>Работа с селектором и ползунком</h1>
+
+	<select id="mySelect" onchange="funcSelector()">
+		<option value="">Один</option>
+		<option value="">Два</option>
+		<option value="">Три</option>
+		<option value="">Четыре</option>
+	</select>
+	<br><br>
+
+	<input type="range" id="range" oninput="funcRange()">
+	<p id="rangeText"></p>
+	<br>
+
+	<input type="range" id="rangeInput" oninput="funcRangeInput()">
+	<input type="text" id="rangeTextInput">
+	<br><br>
+
+	<input type="range" id="rangeRegulation" oninput="funcRangeRegulation()">
+	<div class="range-regulation"></div>
+	<hr>
+
+	<!--CSS ГЕНЕРАТОР-->
+	<h1>CSS ГЕНЕРАТОР</h1>
+	
+	<div class="css-generator">
+    <p>Верхний левый угол:
+        <input type="range" min="0" max="100" value="0" id="rangeTopLeft" oninput="funcCssGenerator()">
+        <input type="text" value="0" id="textTopLeft">
+    </p>
+    <p>Верхний правый угол:
+        <input type="range" min="0" max="100" value="0" id="rangeTopRight" oninput="funcCssGenerator()">
+        <input type="text" value="0" id="textTopRight">
+    </p>
+    <p>Нижний правый угол:
+        <input type="range" min="0" max="100" value="0" id="rangeBottomRight" oninput="funcCssGenerator()">
+        <input type="text" value="0" id="textBottomRight">
+    </p>
+    <p>Нижний левый угол:
+        <input type="range" min="0" max="100" value="0" id="rangeBottomLeft" oninput="funcCssGenerator()">
+        <input type="text" value="0" id="textBottomLeft">
+    </p>
+	</div>
+	<div class="block-css-generator"></div>
+	<hr>
+
+	<!--ВЫПАДАЮЩЕЕ МЕНЮ-->
+	<h1>Выпадающее меню</h1>
+
+	<div id="navigationMenu">
+		<div class="menu-item">
+			Пункт меню 1
+			<div class="submenu">Подменю</div>
+		</div>
+		<div class="menu-item">
+			Пункт меню 2
+			<div class="submenu">Подменю</div>
+		</div>
+		<div class="menu-item">
+			Пункт меню 3
+			<div class="submenu">Подменю</div>
+		</div>
+	</div>
+	<br>
+	<hr>
+
+	<!--ТАБЫ-->
+	<h1>Табы</h1>
+
+	<div id="tabs">
+		<div class="tab whiteborder">Tab 1</div>
+		<div class="tab">Tab 2</div>
+		<div class="tab">Tab 3</div>
+		<div class="tab-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, sit?</div>
+		<div class="tab-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ipsum sit doloremque natus accusamus architecto.</div>
+		<div class="tab-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias cupiditate mollitia vitae nesciunt quo, et adipisci beatae ad sapiente aspernatur!</div>
+	</div>
+	<br>
+	<hr>
+
+	<!--МОДАЛЬНЫЕ ОКНА-->
+	<h1>Модальные окна</h1>
+
+	<button id="btn_modal_window">Открыть модальное окно</button>
+  	<div id="my_modal" class="modal">
+    	<div class="modal_content">
+      		<span class="close_modal_window">&times;</span>
+      		<p>Модальное окно!</p>
+    	</div>
+  	</div>
+  	<hr>
+
+  	<!--АНИМАЦИИ JS-->
+	<h1>Анимации js</h1>
+
+	<button onclick="myMove()">Запустить анимацию</button> <br><br>
+	<div id="animationContainer">
+		<div id="myAnimation"></div>
+	</div>
+	<br>
+	<hr>
+	
+	<!--СЛАЙДЕР-->
+	<h1>Слайдер</h1>
+
+	<div class="slider">
+    	<div class="item">
+        	<img src="img/slider/1.jpg" alt="Первый слайд">
+        	<div class="slideText">Заголовок слайда 1</div>
+    	</div>
+
+    	<div class="item">
+        	<img src="img/slider/2.jpg" alt="Второй слайд">
+        	<div class="slideText">Заголовок слайда 2</div>
+    	</div>
+
+    	<div class="item">
+        	<img src="img/slider/3.jpg" alt="Третий слайд">
+        	<div class="slideText">Заголовок слайда 3</div>
+    	</div>
+
+    	<a class="prev" onclick="minusSlide()">&#10094;</a>
+    	<a class="next" onclick="plusSlide()">&#10095;</a>
+	</div>
+
+	<div class="slider-dots">
+    	<span class="slider-dots_item" onclick="currentSlide(1)"></span> 
+    	<span class="slider-dots_item" onclick="currentSlide(2)"></span> 
+    	<span class="slider-dots_item" onclick="currentSlide(3)"></span> 
+	</div>
+	<hr>
+
+	<!--ФИЛЬТРАЦИЯ-->
+	<h1>Фильтрация</h1>
+
+	<input type="text" onkeyup="funcFiltration()" id="myInput" placeholder="Фильтрация по имени">
+	<ul id="myUL">
+		<li><a href="#" class="listName">А</a></li>
+		<li><a href="#">Антон</a></li>
+		<li><a href="#">Андрей</a></li>			
+		<li><a href="#">Анатолий</a></li>			
+			
+		<li><a href="#" class="listName">Б</a></li>
+		<li><a href="#">Борис</a></li>
+		<li><a href="#">Богдан</a></li>
+		<li><a href="#">Билл</a></li>
+
+		<li><a href="#" class="listName">К</a></li>
+		<li><a href="#">Катя</a></li>
+		<li><a href="#">Камилла</a></li>
+		<li><a href="#">Кристина</a></li>		
+	</ul>
+	<br>
+	<hr>
+
+	<!--КАЛЬКУЛЯТОР-->
+	<h1>Калькулятор</h1>
+
+	<div class="calculator">
+	<p>Число 1: <input type="text" id="number1"> </p>
+	<p>Число 2: <input type="text" id="number2"> </p>
+	
+	<button onclick="plus()">+</button>
+	<button onclick="minus()">-</button>
+	<button onclick="multiplication()">*</button>
+	<button onclick="division()">/</button>
+	<hr>
+	<p id="answer">Ответ:</p>
+	</div>
+	<br>
+	<hr>
+
+	<!--РАБОТА С API--> 
+	<h1>Работа с API</h1>
+	<div id="map"></div>
+	<hr>
+
+	<!--МОДАЛЬНЫЕ ИЗОБРАЖЕНИЯ-->
+	<h1>Модальные изображения</h1>
+	<img src="img/modal-image/637056676986.jpg" alt="Симпатяга" width="300" height="200" id="modalImage">
+	<div id="modalWindow">
+		<span class="close-modal-window" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+		<img id="modalImageContent">
+		<div id="captionModalImage"></div>
+	</div>
+	<hr>
+
+	<!--ПРОГРЕСС БАР-->
+	<h1>Прогресс бар</h1>
+	<div id="progressBar">
+		<div id="progress">
+			<div id="progressBarLabel">10%</div>
+		</div>
+	</div>
+	<br>
+	<button class="progressBarButton" onclick="move()">Прогресс</button>
+	<hr>
+
+	<!--ПОПАП-->
+	<h1>Попап</h1>
+	<div class="popup" onclick="funcPopup()">Подсказка
+		<span class="popuptext" id="myPopup">А вот и подсказка</span>
+	</div>
+	<hr>
+
+	<!--АККОРДИОН-->
+	<h1>Аккордион</h1>
+	<button class="accordion"><b>Section 1</b></button>
+	<div class="panel"><p>Изучаем 15 урок на JS. Тема Аккордион! Это 1 секция.</p></div>
+	<button class="accordion"><b>Section 2</b></button>
+	<div class="panel"><p>Изучаем 15 урок на JS. Тема Аккордион! Это 2 секция.</p></div>
+	<button class="accordion"><b>Section 3</b></button>
+	<div class="panel"><p>Изучаем 15 урок на JS. Тема Аккордион! Это 3 секция.</p></div>
+	<hr>
+
+	<!--КОНВЕРТОР ВАЛЮТ-->
+	<h1>Конвертор валют</h1>
+	<p>
+	<label>$</label>
+	<input type="number" id="inputdol" placeholder="Сколько долларов?" oninput="moneyConvertor(this.value)">
+	</p>
+	<p>RUB: <span id="outputrub"></span></p>
+	<hr>	
+	
+<script type="text/javascript" src="js/input.js"></script><!--РАБОТА С INPUT-->
+<script type="text/javascript" src="js/selectRange.js"></script><!--РАБОТА С СЕЛЕКТОРОМ И ПОЛЗУНКОМ-->
+<script type="text/javascript" src="js/cssGenerator.js"></script><!--CSS ГЕНЕРАТОР-->
+<script type="text/javascript" src="js/dropdownMenu.js"></script><!--ВЫПАДАЮЩЕЕ МЕНЮ-->
+<script type="text/javascript" src="js/tabs.js"></script><!--ТАБЫ-->
+<script type="text/javascript" src="js/modalWindows.js"></script><!--МОДАЛЬНЫЕ ОКНА-->
+<script type="text/javascript" src="js/animation.js"></script><!--АНИМАЦИИ JS-->
+<script type="text/javascript" src="js/slider.js"></script><!--СЛАЙДЕР-->
+<script type="text/javascript" src="js/filtration.js"></script><!--ФИЛЬТРАЦИЯ-->
+<script type="text/javascript" src="js/calculator.js"></script><!--КАЛЬКУЛЯТОР-->
+<script type="text/javascript" src="js/apiGoogleMaps.js"></script><!--РАБОТА С API-->
+<script type="text/javascript" src="js/modalImage.js"></script><!--МОДАЛЬНЫЕ ИЗОБРАЖЕНИЯ-->
+<script type="text/javascript" src="js/progressBar.js"></script><!--ПРОГРЕСС БАР-->
+<script type="text/javascript" src="js/popup.js"></script><!--ПОПАП-->
+<script type="text/javascript" src="js/accordion.js"></script><!--АККОРДИОН-->
+<script type="text/javascript" src="js/moneyConvertor.js"></script><!--КОНВЕРТОР ВАЛЮТ-->
+
+</body>
+</html>
